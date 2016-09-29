@@ -37,7 +37,7 @@ function preload() {
     game.load.image('bullet', 'assets/bullet3.png');
     game.load.image('gameover', 'assets/gameover.png');
     game.load.image('youwin', 'assets/youwin.png');
-    game.load.spritesheet('dude', 'assets/kitty2.png', 70, 63);
+    game.load.spritesheet('dude', 'assets/kitty3.png', 70, 55);
     game.load.spritesheet('enemy', 'assets/ghost5.png', 44, 40);
     // game.load.atlas('lazer', 'assets/laser.png', 'assets/laser.json');
 
@@ -203,7 +203,7 @@ function create() {
     //  Player physics properties. Give the little guy a slight bounce.
     player.body.bounce.y = 0.2;
     player.body.gravity.y = 400;
-    player.body.velocity.x = 20;
+    player.body.velocity.x = 30;
     player.body.collideWorldBounds = true;
 
     //  Our two animations, walking left and right.
@@ -231,12 +231,11 @@ function create() {
 
     scorePic = game.add.sprite(12, 12, 'scorePic');
     scorePic.fixedToCamera = true;
-    scorePic.scale.setTo(1.2, 1);
 
     //  The score
     // scoreText = game.add.text(25, 20, 'Score: 0', { font: '40px VT323', fill: '#b978a0' });
 
-    scoreText = game.add.text(25, 20, 'Score: 0', { fontSize: '40px', fill: '#b978a0' });
+    scoreText = game.add.text(130, 15, '0', { font: '30px courier', fill: '#ffffff' });
     scoreText.fixedToCamera = true;
 
     game.world.bringToTop(scoreText);
@@ -338,7 +337,7 @@ function update() {
     
     //  Allow the player to jump if they are touching the ground.
     if (cursors.up.isDown && player.body.touching.down) {
-        player.body.velocity.y = -350;
+        player.body.velocity.y = -450;
     }
 
     if (anim.isPlaying) {   
@@ -411,7 +410,7 @@ function collectStar (player, star) {
 
     //  Add and update the score
     score += 10;
-    scoreText.text = 'Score: ' + score;
+    scoreText.text = score;
 };
 
 
@@ -438,7 +437,7 @@ function collisionHandler(bullet, enemy) {
     bullet.kill();
     enemy.kill();
     score += 30;
-    scoreText.text = 'Score: ' + score;
+    scoreText.text = score;
 
 };
 
