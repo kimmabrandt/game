@@ -375,7 +375,7 @@ function createEnemies() {
 
         enemy = enemies.create(enemyXLoc, 100, 'enemy');
         enemy.body.bounce.set(1);
-        enemy.body.velocity.x = -100;
+        enemy.body.velocity.x = -80;
         enemy.body.collideWorldBounds = true;
         enemy.body.immovable = false;
         enemy.body.gravity.y = 100;
