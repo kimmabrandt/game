@@ -1,11 +1,11 @@
 
-var game = new Phaser.Game(800, 600, Phaser.AUTO, '', 
+var game = new Phaser.Game(800, 600, Phaser.AUTO, 'gameContainer', 
     { preload: preload, create: create, update: update });
 
 function preload() {
     //load all images and assign them names (keys)
     game.load.image('firstaid', 'assets/firstaid.png');
-    game.load.image('background', 'assets/skybg1.png');
+    game.load.image('background', 'assets/skybgfinal.jpg');
     game.load.image('clouds', 'assets/cloudplatform2.png');
     game.load.image('cloudsPink', 'assets/cloudplatform3.png');
     game.load.image('groundBottom', 'assets/ground.png');
@@ -37,6 +37,7 @@ function preload() {
     game.load.image('bullet', 'assets/bullet3.png');
     game.load.image('gameover', 'assets/gameover.png');
     game.load.image('youwin', 'assets/youwin.png');
+    game.load.image('help', 'assets/help.png');
     game.load.spritesheet('dude', 'assets/kitty3.png', 70, 55);
     game.load.spritesheet('enemy', 'assets/ghost5.png', 44, 40);
     // game.load.atlas('lazer', 'assets/laser.png', 'assets/laser.json');
@@ -125,16 +126,16 @@ function create() {
     ledge = platforms.create(1270, 412, 'sprinkles3w');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(1928, 380, 'pink5w');
+    ledge = platforms.create(1928, 410, 'pink5w');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(2226, 285, 'pinkedge4w');
+    ledge = platforms.create(2226, 305, 'pinkedge4w');
     ledge.body.immovable = true;
 
     ledge = platforms.create(2468, 198, 'pinkedge4w');
     ledge.body.immovable = true;
 
-    ledge = platforms.create(2717, 112, 'pink2w');
+    ledge = platforms.create(2717, 90, 'pink2w');
     ledge.body.immovable = true;
 
     ledge = platforms.create(3522, 420, 'pink9w');
@@ -172,7 +173,7 @@ function create() {
     bgElements = game.add.group();
     var candy = bgElements.create(188, 316, 'candy1');
     candy = bgElements.create(798, 175, 'candy2');
-    candy = bgElements.create(1980, 285, 'platform2candy');
+    candy = bgElements.create(1980, 315, 'platform2candy');
     candy = bgElements.create(3390, 381, 'greenloli');
     candy = bgElements.create(3525, 229, 'finishcandy');
 
@@ -185,9 +186,14 @@ function create() {
     clouds = bgClouds.create(400, 100, 'cloudsPink');
     clouds = bgClouds.create(700, 200, 'cloudsPink');
     clouds = bgClouds.create(1220, 100, 'cloudsPink');
+    clouds = bgClouds.create(game.world.width - 100, 100, 'cloudsPink');
+    clouds = bgClouds.create(game.world.width - 400, 150, 'cloudsPink');
+    clouds = bgClouds.create(game.world.width - 1500, 100, 'cloudsPink');
 
     // Game text
     gameText = game.add.group();
+    help = gameText.create(735, 12, 'help');
+    help.fixedToCamera = true;
 
 
 
@@ -337,7 +343,7 @@ function update() {
     
     //  Allow the player to jump if they are touching the ground.
     if (cursors.up.isDown && player.body.touching.down) {
-        player.body.velocity.y = -450;
+        player.body.velocity.y = -400;
     }
 
     if (anim.isPlaying) {   

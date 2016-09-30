@@ -11,12 +11,53 @@
     <style type="text/css">
         body {
             margin: 0;
-            font-family:courier;
         }
-    </style>
-</head>
-<body>
+        #container {
+            margin: 0 auto;
+            width: 800px;
+            height:100%;
+            position:relative;
+            background-color:#444;
+            border-left:10px solid #dea3ed;
+            border-right:10px solid #dea3ed;
+            text-align:center;
+        }
+        #gameContainer {
+            margin-top:20px;
+            margin-bottom:20px;
+        }
+        ul {
+            list-style:none;
+            list-style-position:outside;
+            text-align:left;
+        }
+        #bottom {
+            margin:0 auto;
+        }
 
+    </style>
+
+
+</head>
+
+<body>
+<div id="container">
+    <img src="assets/intro.jpg"><br>
+    <div id="gameContainer">    
+    </div>
+
+    <div id="bottom">
+        <h1>Credits</h1>
+        <ul>
+        Framework
+        <li><a href="http://phaser.io/" target="new">Phaser.io</a></li>
+        Graphic Elements
+        <li><a href="http://www.freepik.com/" target="new">Freepik</a></li>
+        Game Assets and Tiles
+        <li><a href="http://kenney.nl/" target="new">Kenny.nl</a></li>
+        </ul>
+    </div>
+</div>
 <script src="js/main.js"></script>
 
 </body>
