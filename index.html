@@ -2,7 +2,7 @@
 <html lang="en"> 
 <head> 
 	<meta charset="UTF-8" />
-    <title>CATS N DONUTS</title>
+    <title>Kitty Combat</title>
 
     <!-- Prevent user from zooming in on accident -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,10 +17,11 @@
             width: 800px;
             height:100%;
             position:relative;
-            background-color:#444;
+            background-color:#97f1ef;
             border-left:10px solid #dea3ed;
             border-right:10px solid #dea3ed;
             text-align:center;
+            
         }
         #gameContainer {
             margin-top:20px;
@@ -33,6 +34,7 @@
         }
         #bottom {
             margin:0 auto;
+            font-family:avenir;
         }
 
     </style>
@@ -42,12 +44,14 @@
 
 <body>
 <div id="container">
-    <img src="assets/intro.jpg"><br>
+    <img src="assets/intro.jpg" style="margin-bottom:20px;"><br>
+    <img src="assets/down2.png" style="margin-right:20px; opacity:.7"><img src="assets/down2.png" style="margin-left:20px; opacity:.7"> 
     <div id="gameContainer">    
     </div>
 
     <div id="bottom">
-        <h1>Credits</h1>
+    <img src="assets/controls.png" style="margin-top:20px; margin-bottom:35px">
+<!--         <h1>Credits</h1>
         <ul>
         Framework
         <li><a href="http://phaser.io/" target="new">Phaser.io</a></li>
@@ -55,7 +59,7 @@
         <li><a href="http://www.freepik.com/" target="new">Freepik</a></li>
         Game Assets and Tiles
         <li><a href="http://kenney.nl/" target="new">Kenny.nl</a></li>
-        </ul>
+        </ul> -->
     </div>
 </div>
 <script src="js/main.js"></script>
